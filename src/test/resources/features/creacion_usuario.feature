@@ -5,7 +5,7 @@ Feature: Gestión de empleados en OrangeHRM
   Para asegurar que el sistema almacena correctamente la información
 
   Background:
-    Given el administrador accede al portal de OrangeHRM
+    Given administrador accede al portal de OrangeHRM
 
   Scenario: Agregar y validar nuevo empleado
     When el navega al módulo PIM

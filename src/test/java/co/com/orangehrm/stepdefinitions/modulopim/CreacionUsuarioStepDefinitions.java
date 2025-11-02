@@ -1,12 +1,14 @@
 package co.com.orangehrm.stepdefinitions.modulopim;
 
 import co.com.orangehrm.steps.LoginSteps;
+import co.com.orangehrm.tasks.login.DoLogin;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.annotations.Step;
 import net.serenitybdd.annotations.Steps;
+
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CreacionUsuarioStepDefinitions {
 
@@ -14,8 +16,12 @@ public class CreacionUsuarioStepDefinitions {
     LoginSteps loginSteps;
 
     @Given("^(.*) accede al portal de OrangeHRM")
-    public void AccederAlPortalDeOrangeHRM(String actorName) {
+    public void AccederAlPortalDeOrangeHRM(String actorName){
         loginSteps.abrirPortal(actorName);
+        theActorInTheSpotlight().attemptsTo(
+                new DoLogin(actorName)
+        );
+
     }
 
     @When("el navega al módulo PIM")
