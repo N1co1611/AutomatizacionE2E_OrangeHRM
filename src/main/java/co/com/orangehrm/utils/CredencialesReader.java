@@ -13,6 +13,7 @@ public class CredencialesReader {
     public static JsonObject getCredencialesPorRol(String rol) {
         try {
             InputStream inputStream = CredencialesReader.class.getResourceAsStream(CREDENCIALES_PATH);
+            assert inputStream != null;
             JsonObject root = JsonParser.parseReader(new InputStreamReader(inputStream)).getAsJsonObject();
             JsonObject perfil = root.getAsJsonObject(rol.toLowerCase());
 

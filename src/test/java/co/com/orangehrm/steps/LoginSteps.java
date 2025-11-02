@@ -3,12 +3,7 @@ package co.com.orangehrm.steps;
 import co.com.orangehrm.stepdefinitions.Setup;
 import co.com.orangehrm.tasks.EsperarCargaPagina;
 import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-
-import java.time.Duration;
-
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class LoginSteps {
 
